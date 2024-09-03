@@ -1,6 +1,7 @@
 "use client";
 
 import { useCoins } from "./hooks/useCoinData";
+import Link from 'next/link';
 
 export default function Home() {
   const { data, isLoading, error } = useCoins();
@@ -17,10 +18,10 @@ export default function Home() {
       <ul className="mt-4 list-none">
         {data?.map((coin) => (
           <li key={coin.id} className="bg-white text-black rounded-lg mb-3 shadow-md hover:bg-gray-100 transition">
-            <a href={`/${coin.id}`} className="flex items-center p-5">
-              <img src={coin.image} alt={coin.name} className="w-9 h-9 mr-4" />
-              {coin.name} &rarr;
-            </a>
+            <Link href={`/${coin.id}`} className="flex items-center p-5">
+                <img src={coin.image} alt={coin.name} className="w-9 h-9 mr-4" />
+                {coin.name} &rarr;
+            </Link>
           </li>
         ))}
       </ul>
