@@ -2,6 +2,7 @@
 
 import { useCoins } from "./hooks/useCoinData";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const { data, isLoading, error } = useCoins();
@@ -19,8 +20,14 @@ export default function Home() {
         {data?.map((coin) => (
           <li key={coin.id} className="bg-white text-black rounded-lg mb-3 shadow-md hover:bg-gray-100 transition">
             <Link href={`/${coin.id}`} className="flex items-center p-5">
-                <img src={coin.image} alt={coin.name} className="w-9 h-9 mr-4" />
-                {coin.name} &rarr;
+              <Image
+                src={coin.image}
+                alt={coin.name}
+                width={36} 
+                height={36} 
+                className="mr-4"
+              />
+              {coin.name} &rarr;
             </Link>
           </li>
         ))}
