@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="max-w-screen-md mx-auto px-5">
       <header className="h-20 flex justify-center items-center">
-        <h1 className="text-4xl text-center text-blue-400">CryptoTracker</h1>
+        <h1 className="text-4xl text-blue-400">CryptoTracker</h1>
       </header>
 
       <ul className="mt-4 list-none">
@@ -25,7 +25,9 @@ export default function Home() {
                 alt={coin.name}
                 width={36} 
                 height={36} 
-                className="mr-4"
+                className="mr-4 object-cover"
+                loading="lazy"
+                quality={80}
               />
               {coin.name} &rarr;
             </Link>
