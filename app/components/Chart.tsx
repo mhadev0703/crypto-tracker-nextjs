@@ -1,19 +1,22 @@
 import { useCoinHistory } from "../hooks/useCoinData";
 import dynamic from "next/dynamic";
+import { useMemo } from "react";
 
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default function Chart({ coinId }: { coinId: string }) {
-  console.log("Passed coinId: ", coinId);
   const { data, isLoading, error } = useCoinHistory(coinId);
+
+  const processedData = useMemo(() => {
+    return data ? data.map((entry) => ({
+      x: new Date(entry[0]),
+      y: entry[4],
+    })) : [];
+  }, [data]);
 
   if (isLoading) return <p className="text-center py-5">Loading...</p>;
   if (error) return <p className="text-center py-5">Error loading coin history: {error.message}</p>;
-
-  const processedData = data?.map((entry) => ({
-    x: new Date(entry[0]),
-    y: entry[4],
-  })) ?? [];
+  
 
   return (
     <div>
