@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-lightBg text-lightText dark:bg-darkBg dark:text-darkText;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+}
+
+ul {
+    @apply list-none;
+}
+
+img {
+    @apply max-w-full h-auto;
+}
