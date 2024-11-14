@@ -10,15 +10,20 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
+    "@next/bundle-analyzer": "^14.2.11",
+    "@tanstack/query-core": "^5.52.2",
     "@tanstack/react-query": "^5.52.1",
     "apexcharts": "^3.52.0",
     "next": "14.2.6",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "recoil": "^0.7.7"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.52.0",
+    "@tanstack/react-query-devtools": "^5.52.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
