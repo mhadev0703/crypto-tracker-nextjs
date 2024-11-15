@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CryptoTracker (Next.js Version)
 
-## Getting Started
+## Overview
+CryptoTracker is a Next.js-powered web application that provides real-time cryptocurrency data using the CoinGecko API. After migrating from React to Next.js, the application achieved significant performance improvements and a better user experience. With its enhanced efficiency and optimization, CryptoTracker is an essential tool for crypto enthusiasts and investors tracking market movements.
 
-First, run the development server:
+## Key Improvements
+- **API Optimization:** Reduced redundant API calls, addressing public API call limit issues by caching data for 30 minutes and refetching only after that period.
+- **Performance Enhancement:** Improved total page interaction time by 14%.
+- **Accessibility Improvement:** Increased Chrome Lighthouse accessibility score from 76 to 95, a 25% enhancement.
+- **Dark/Light Mode Toggle:** Allows users to switch between dark and light modes for a better visual experience.
+- **UI Optimization:** Unified component shapes and optimized font performance for better readability and user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Main Page 
+![Main Page - Dark Mode](images/main.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Coin Page
+![Coin Page](images/coin.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Price Trend Chart
+![Chart](images/chart.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Price Info
+![Price Info](images/price.png)
 
-## Learn More
+## Technologies Used
+- **Next.js & TypeScript:** For building a scalable, optimized frontend with server-side rendering features.
+- **React Query:** Handles API calls and data caching, ensuring efficient synchronization with public APIs.
+- **Tailwind CSS:** Provides clean and flexible styling, enhancing the visual appeal and responsiveness of the UI.
+- **ApexCharts:** Integrated for interactive data visualization of cryptocurrency price trends.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Future Improvements
+While the migration to Next.js significantly improved performance and API efficiency, there is potential for further optimization. Future enhancements could include adopting Incremental Static Regeneration (ISR) for pages with less frequent updates, improving error handling for API failures, and expanding the application's reach with localization support. These updates aim to enhance scalability and user experience while maintaining efficient data usage.
