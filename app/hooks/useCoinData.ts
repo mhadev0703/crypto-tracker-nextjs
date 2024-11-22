@@ -11,7 +11,7 @@ export function useCoins() {
     queryKey: ['allcoins'],
     queryFn: fetchCoins,
     select: (data) => data.slice(0, 50),
-    refetchInterval: REFRESH_INTERVAL, 
+    refetchInterval: REFRESH_INTERVAL,
   });
 }
 
@@ -20,7 +20,7 @@ export function useCoinHistory(coinId: string) {
   return useQuery<number[][]>({
     queryKey: ['ohlcv', coinId],
     queryFn: () => fetchCoinHistory(coinId),
-    refetchInterval: REFRESH_INTERVAL, 
+    refetchInterval: REFRESH_INTERVAL,
   });
 }
 
@@ -29,7 +29,7 @@ export function useCoinInfo(coinId: string) {
   return useQuery<CoinInfo>({
     queryKey: ['coinInfo', coinId],
     queryFn: () => fetchCoinInfo(coinId),
-    refetchInterval: REFRESH_INTERVAL, 
+    refetchInterval: REFRESH_INTERVAL,
   });
 }
 
